@@ -5,8 +5,8 @@ import { Cat } from '../interfaces/cat.interface';
 export class CatsService {
   private readonly cats: Cat[] = [];
 
-  create(cat: Cat) {
-    this.cats.push(cat);
+  async create(cat: Cat) {
+    return this.cats.push(cat);
   }
 
   findAll(): Cat[] {
