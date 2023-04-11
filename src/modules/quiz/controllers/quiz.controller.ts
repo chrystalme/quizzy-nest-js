@@ -8,8 +8,8 @@ import {
   ValidationPipe,
   ParseIntPipe,
 } from '@nestjs/common';
-import { QuizService } from './quiz.service';
-import { createQuizDto } from '../dbo/create-quiz.dto';
+import { QuizService } from '../services/quiz.service';
+import { createQuizDto } from '../../dbo/create-quiz.dto';
 
 @Controller('quiz')
 export class QuizController {
