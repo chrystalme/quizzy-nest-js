@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { createQuestionDto } from '../../dbo/create-question.dto';
+import { createQuestionDto } from '../../dto/create-question.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Question } from '../entities/question.entity';
 import { QuestionRepository } from '../repositories/question.repository';

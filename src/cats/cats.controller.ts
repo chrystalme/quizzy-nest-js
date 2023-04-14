@@ -6,7 +6,11 @@ import { Cat } from '../interfaces/cat.interface';
 @Controller('cats')
 export class CatsController {
   constructor(private catsService: CatsService) {}
-
+  /**
+   * Create a new cat with the given data.
+   * @param createCatDto The data for the cat to be created.
+   * @returns A promise that resolves to the created cat.
+   */
   @Post()
   async create(@Body() createCatDto: CreateCatDto) {
     return await this.catsService.create(createCatDto);

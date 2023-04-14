@@ -6,6 +6,7 @@ export class createQuestionDto {
     message: 'the quiz title should be at least 3 characters long',
   })
   question: string;
+
   @IsNotEmpty()
   quizId: number;
 }

@@ -9,7 +9,7 @@ import {
   ParseIntPipe,
 } from '@nestjs/common';
 import { QuizService } from '../services/quiz.service';
-import { createQuizDto } from '../../dbo/create-quiz.dto';
+import { createQuizDto } from '../../dto/create-quiz.dto';
 
 @Controller('quiz')
 export class QuizController {
