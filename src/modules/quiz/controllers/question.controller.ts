@@ -1,6 +1,9 @@
 import {
   Body,
   Controller,
+  Get,
+  Param,
+  ParseIntPipe,
   Post,
   UsePipes,
   ValidationPipe,
@@ -22,5 +25,13 @@ export class QuestionController {
   async saveQuestion(@Body() question: createQuestionDto): Promise<Question> {
     const quiz = await this.quizService.getQuizById(question.quizId);
     return await this.questionService.createQuestion(question, quiz);
+  }
+
+  @Get('/:id')
+  async getQuestionById(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<Question> {
+    // return await this.questionService.getQuestionById(id);
+    return await this.questionService.getQuestionById(id);
   }
 }

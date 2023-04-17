@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { QuizService } from '../services/quiz.service';
 import { createQuizDto } from '../../dto/create-quiz.dto';
+import { Quiz } from '../entities/quiz.entity';
 
 @Controller('quiz')
 export class QuizController {
@@ -20,7 +21,7 @@ export class QuizController {
   }
 
   @Get('/:id')
-  async getQuizById(@Param('id', ParseIntPipe) id: number): Promise<any> {
+  async getQuizById(@Param('id', ParseIntPipe) id: number): Promise<Quiz> {
     return await this.quizService.getQuizById(id);
   }
 

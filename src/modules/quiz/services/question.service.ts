@@ -22,6 +22,13 @@ export class QuestionService {
     await quiz.save();
     return newQuestion;
   }
+
+  async getQuestionById(id: number): Promise<Question> {
+    return await this.questionRepository.findOne({
+      where: { id: id },
+      relations: { options: true },
+    });
+  }
 }
 // @Injectable()
 // export class QuestionService {
