@@ -15,9 +15,10 @@ import { Quiz } from '../entities/quiz.entity';
 @Controller('quiz')
 export class QuizController {
   constructor(private quizService: QuizService) {}
+
   @Get('/')
-  getAllQuizzes(): string[] {
-    return this.quizService.getAllQuizzes();
+  async getAllQuizzes(): Promise<Quiz[]> {
+    return await this.quizService.getAllQuizzes();
   }
 
   @Get('/:id')
